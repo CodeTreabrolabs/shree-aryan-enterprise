@@ -1,174 +1,493 @@
+export type PropertyType =
+  | "Apartment"
+  | "Villa"
+  | "Commercial"
+  | "Office"
+  | "Retail"
+  | "Luxury"
+
+export interface Configuration {
+  wing?: string
+  type: string
+  size: string
+  price: string
+  facing?: string
+}
+
+export interface Contact {
+  name: string
+  role?: string
+  phone: string
+  email?: string
+}
+
+export interface Possession {
+  constructionTarget: string
+  reraCommitment: string
+}
+
 export interface Property {
   id: string
+  slug: string
   title: string
-  price: number
+  developer?: string
+  tagline?: string
   location: string
-  type: "Apartment" | "Villa" | "Commercial" | "Office" | "Retail"
-  bedrooms?: number
-  bathrooms?: number
-  area: number
-  image: string
+  type: PropertyType
   featured: boolean
   description: string
+  highlights?: string[]
   amenities: string[]
+  configurations?: Configuration[]
+  possession?: Possession
+  rera?: string
+  contact?: Contact
+  driveLink?: string
+  mapLink?: string
+  image: string
   gallery: string[]
 }
 
 export const properties: Property[] = [
   {
     id: "1",
-    title: "Luxury Penthouse Suite",
-    price: 2500000,
-    location: "Manhattan, New York",
+    slug: "jb99",
+    title: "JB99",
+    developer: "Group Satellite and Rockford Group",
+    tagline:
+      "Premium Living in the Heart of Andheri – JB Nagar. Thoughtfully planned homes with modern architecture.",
+    location: "JB Nagar, Andheri East, Mumbai",
     type: "Apartment",
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 3200,
-    image: "/properties/property-1.jpg",
     featured: true,
-    description: "Experience unparalleled luxury in this stunning penthouse suite featuring floor-to-ceiling windows with breathtaking city views. This meticulously designed residence offers premium finishes throughout, including Italian marble flooring, custom cabinetry, and state-of-the-art appliances. The expansive living area seamlessly flows to a private terrace, perfect for entertaining.",
-    amenities: ["Rooftop Terrace", "24/7 Concierge", "Private Elevator", "Smart Home System", "Wine Cellar", "Fitness Center"],
-    gallery: ["/properties/property-1.jpg", "/properties/property-1-2.jpg", "/properties/property-1-3.jpg"]
+    description:
+      "Codename JB99 offers thoughtfully designed residences in one of Andheri East’s most connected and vibrant neighborhoods. With optimal layouts, trusted developers, and lifestyle-driven amenities, this project brings modern urban comfort together with everyday convenience.",
+    highlights: [
+      "50+ Years of Excellence",
+      "62+ Projects Completed",
+      "50+ Lakh Sqft Delivered",
+      "Jain temples in close proximity",
+      "Prime JB Nagar neighborhood",
+      "Excellent metro, airport & highway connectivity",
+      "Lifestyle-focused amenities",
+    ],
+    amenities: [
+    "Grand Entrance Lobby",
+    "Rooftop Garden & Seating",
+    "24x7 CCTV & Security",
+    "Fire Safety Systems",
+    "Ample Parking Space",
+  ],
+    configurations: [
+      {
+        type: "1 BHK Classic",
+        size: "400 – 470 sqft",
+        price: "₹1.33 Cr++",
+      },
+      {
+        type: "1 BHK Premium",
+        size: "475 – 550 sqft",
+        price: "₹1.58 Cr++",
+      },
+      {
+        type: "2 BHK Signature",
+        size: "700 – 780 sqft",
+        price: "₹2.33 Cr++",
+      },
+    ],
+    possession: {
+      constructionTarget: "Dec 2027",
+      reraCommitment: "Dec 2028",
+    },
+    rera: "PR1180002500901",
+    contact: {
+      name: "Naziya Hashmi",
+      phone: "9769029427",
+    },
+    image: "/properties/property-1.jpg",
+    gallery: [
+      "properties/property-2.jpg",
+      "properties/property-3.jpg",
+      "properties/property-4.jpg",
+      "properties/property-5.jpg",
+    ],
+    driveLink: "https://drive.google.com/",
   },
+
   {
     id: "2",
-    title: "Modern Waterfront Villa",
-    price: 4800000,
-    location: "Miami Beach, Florida",
-    type: "Villa",
-    bedrooms: 6,
-    bathrooms: 5,
-    area: 5500,
-    image: "/properties/property-2.jpg",
+    slug: "kalpataru-magnus",
+    title: "Kalpataru Magnus",
+    developer: "Kalpataru Group",
+    tagline:
+      "Premium residences on a rare three-side open land parcel opposite Gurunanak Hospital.",
+    location: "Bandra East, Mumbai",
+    type: "Luxury",
     featured: true,
-    description: "A masterpiece of contemporary architecture, this waterfront villa offers direct ocean access and panoramic views. The open-concept design features soaring ceilings, a chef's kitchen, and multiple entertainment areas. The outdoor oasis includes an infinity pool, summer kitchen, and private dock.",
-    amenities: ["Private Pool", "Ocean Access", "Home Theater", "Guest House", "3-Car Garage", "Smart Security"],
-    gallery: ["/properties/property-2.jpg", "/properties/property-2-2.jpg", "/properties/property-2-3.jpg"]
+    description:
+      "Kalpataru Magnus is a landmark residential development in Bandra East, offering premium homes on a rare three-side open land parcel. With OC received for key towers, lush landscaped spaces, and refined layouts, this project blends luxury with everyday functionality.",
+    highlights: [
+      "2.24 acres three-side open land parcel",
+      "3 wings with premium layouts",
+      "3 basement car parks",
+      "OC received for Tower A & B",
+      "30 habitable floors in A & B, 26 floors in C",
+    ],
+    amenities: [
+      "Landscaped Gardens",
+      "Fitness Center",
+      "Kids Play Area",
+      "Multipurpose Hall",
+      "24x7 Security",
+      "Ample Parking",
+    ],
+    configurations: [
+      {
+        wing: "A Wing",
+        type: "2 BHK",
+        size: "925 sq.ft carpet",
+        price: "₹5.91 Cr all inclusive",
+        facing: "Premium layouts",
+      },
+      {
+        wing: "A Wing",
+        type: "3 BHK",
+        size: "1121 sq.ft carpet",
+        price: "₹7.83 Cr onwards",
+        facing: "Garden Facing",
+      },
+      {
+        wing: "A Wing",
+        type: "3 BHK",
+        size: "1150 sq.ft carpet",
+        price: "₹8.09 Cr onwards",
+        facing: "Garden Facing",
+      },
+      {
+        wing: "B Wing",
+        type: "3 BHK",
+        size: "1321 sq.ft carpet",
+        price: "₹8.48 Cr onwards",
+        facing: "City Facing",
+      },
+      {
+        wing: "B Wing",
+        type: "4 BHK",
+        size: "1657 sq.ft carpet",
+        price: "₹11.84 Cr all inclusive",
+        facing: "Garden Facing",
+      },
+      {
+        wing: "C Wing",
+        type: "3 BHK",
+        size: "1374 sq.ft carpet",
+        price: "₹9.35 Cr all inclusive",
+        facing: "Garden Facing",
+      },
+      {
+        wing: "C Wing",
+        type: "4.5 BHK",
+        size: "1800 sq.ft carpet",
+        price: "₹11.87 Cr all inclusive",
+        facing: "City Facing",
+      },
+    ],
+    rera: "P51800004029",
+    contact: {
+      name: "Kirti Amin",
+      phone: "9967443264",
+      email: "sales@kalpataru.com",
+    },
+    image: "properties/property-2.jpg",
+    gallery: [
+      "properties/property-1.jpg",
+      "properties/property-2.jpg",
+      "properties/property-3.jpg",
+      "properties/property-4.jpg",
+      "properties/property-5.jpg",
+    ],
+    driveLink:
+      "https://drive.google.com/file/d/1ZMDF-xGzVWhydzO1bROIrPmn46ujqvlT/view?usp=sharing",
+    mapLink:
+      "https://www.google.com/maps/place/Kalpataru+Magnus/@19.0596141,72.8525241,17z",
   },
+
   {
     id: "3",
-    title: "Downtown Corporate Office",
-    price: 3200000,
-    location: "Financial District, NYC",
-    type: "Commercial",
-    area: 8000,
-    image: "/properties/property-3.jpg",
+    slug: "shapoorji-minerva",
+    title: "Shapoorji Minerva Towers",
+    developer: "Shapoorji Pallonji",
+    tagline:
+      "South Mumbai's tallest icon by Shapoorji Pallonji — where sky-high living meets timeless luxury.",
+    location: "Mahalakshmi, South Mumbai",
+    type: "Luxury",
     featured: true,
-    description: "Premium Class A office space in the heart of the Financial District. This turn-key corporate office features modern infrastructure, high-speed connectivity, and stunning views. Ideal for established businesses seeking a prestigious address with excellent transportation links.",
-    amenities: ["Conference Rooms", "Reception Area", "Server Room", "Parking Garage", "24/7 Access", "Building Security"],
-    gallery: ["/properties/property-3.jpg", "/properties/property-3-2.jpg", "/properties/property-3-3.jpg"]
+    description:
+      "Shapoorji Minerva Towers is India’s tallest residential tower rising 91 floors above South Mumbai. With full OC received, breathtaking sky decks, and ultra-premium residences, this iconic development redefines luxury living in the city skyline.",
+    highlights: [
+      "India’s tallest residential tower – 91 floors",
+      "Full OC received",
+      "Spectacular 78th-floor sky deck",
+      "World-class amenities",
+      "MahaRERA: P51900008204",
+    ],
+    amenities: [
+      "Sky Deck",
+      "Infinity Pool",
+      "Fitness Center",
+      "Luxury Spa",
+      "Banquet Hall",
+      "Kids Play Area",
+      "24×7 Security",
+    ],
+    configurations: [
+      {
+        type: "4 BHK",
+        size: "2019 sq.ft including 278 sq.ft deck",
+        price: "₹14.45 Cr++",
+        facing: "East–West facing — Race Course & Eastern Seaboard",
+      },
+      {
+        type: "3.5 BHK",
+        size: "2058 sq.ft including 346 sq.ft deck",
+        price: "₹14.99 Cr++",
+        facing: "Arabian Sea & Race Course view | 68th floor onwards",
+      },
+      {
+        type: "4 BHK",
+        size: "2136 sq.ft including 291 sq.ft deck",
+        price: "₹15.45 Cr++",
+        facing: "Dual aspect views",
+      },
+      {
+        type: "Sky Mansions",
+        size: "Limited Edition",
+        price: "Details on request",
+        facing: "Curated for connoisseurs of exclusivity",
+      },
+    ],
+    rera: "P51900008204",
+    contact: {
+      name: "Sales Team",
+      phone: "9876543210",
+      email: "sales@shapoorji.com",
+    },
+    image: "properties/property-3.jpg",
+    gallery: [
+      "properties/property-1.jpg",
+      "properties/property-2.jpg",
+      "properties/property-3.jpg",
+      "properties/property-4.jpg",
+      "properties/property-5.jpg",
+    ],
+    driveLink: "https://drive.google.com/",
   },
+
   {
     id: "4",
-    title: "Contemporary City Apartment",
-    price: 850000,
-    location: "Brooklyn, New York",
+    slug: "solstice",
+    title: "Solstice",
+    developer: "The Baya Company",
+    tagline: "Where Life Reaches Its Pinnacle",
+    location: "Makwana Road, Marol, Andheri East, Mumbai",
     type: "Apartment",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: 1200,
-    image: "/properties/property-4.jpg",
     featured: false,
-    description: "Stylish urban living in this beautifully renovated Brooklyn apartment. Features include exposed brick, hardwood floors, and a gourmet kitchen with high-end appliances. The building offers modern amenities in a prime location close to parks, restaurants, and transit.",
-    amenities: ["Rooftop Access", "Gym", "Laundry", "Pet Friendly", "Bike Storage", "Package Room"],
-    gallery: ["/properties/property-4.jpg", "/properties/property-4-2.jpg", "/properties/property-4-3.jpg"]
+    description:
+      "Solstice by The Baya Company offers some of the largest 2 & 3 bed residences in Andheri East, with spacious decks, servant rooms, and podium + rooftop lifestyle amenities. Designed for elevated urban living with comfort and elegance.",
+    highlights: [
+      "Largest-in-size 2 & 3 Bed Residences",
+      "Spacious decks in every apartment",
+      "Attached servant room in all apartments",
+      "Utility spaces for effortless living",
+      "Podium & Rooftop luxury amenities",
+      "Limited-time launch benefits",
+    ],
+    amenities: [
+      "Rooftop Lounge",
+      "Swimming Pool",
+      "Fitness Center",
+      "Kids Play Area",
+      "Jogging Track",
+      "Clubhouse",
+      "24x7 Security",
+    ],
+    configurations: [
+      {
+        type: "2 BHK",
+        size: "788 - 933 Sq. Ft.",
+        price: "₹2.13 Cr++",
+      },
+      {
+        type: "3 BHK",
+        size: "1283 - 1466 Sq. Ft.",
+        price: "₹3.47 Cr++",
+      },
+    ],
+    contact: {
+      name: "Nadir Shaikh",
+      role: "Manager – Sales",
+      phone: "9967879039",
+      email: "sales@bayacompany.com",
+    },
+    image: "properties/property-4.jpg",
+    gallery: [
+      "properties/property-1.jpg",
+      "properties/property-2.jpg",
+      "properties/property-3.jpg",
+      "properties/property-4.jpg",
+      "properties/property-5.jpg",
+    ],
+    driveLink: "https://drive.google.com/",
+    mapLink: "https://maps.app.goo.gl/EJWKjCTJMyCSxfZh7",
   },
   {
     id: "5",
-    title: "Executive Corner Office Suite",
-    price: 1500000,
-    location: "Midtown, Manhattan",
-    type: "Office",
-    area: 4500,
-    image: "/properties/property-5.jpg",
+    slug: "ten-bkc",
+    title: "TEN BKC",
+    developer: "Confidential Developer",
+    tagline: "Luxury Residential Project in Mumbai with Full OC Received",
+    location: "Bandra East, Mumbai, Maharashtra",
+    type: "Apartment",
     featured: true,
-    description: "Prestigious corner office suite offering commanding views of the Manhattan skyline. This executive space includes private offices, open work areas, and a dedicated conference center. Premium building with full-service amenities and excellent accessibility.",
-    amenities: ["Private Offices", "Board Room", "Kitchen", "Storage", "IT Infrastructure", "Valet Parking"],
-    gallery: ["/properties/property-5.jpg", "/properties/property-5-2.jpg", "/properties/property-5-3.jpg"]
+    description:
+      "TEN BKC offers premium residences in Bandra East with unique tower designs, spacious layouts, and modern amenities. The project ensures comfort, luxury, and seamless connectivity across Mumbai.",
+    highlights: [
+      "Full OC Received",
+      "Plot Size: 4.9 acres",
+      "Open Greens: 2.9 acres",
+      "Unique 3-zone tower design (A, B, C)",
+      "Zone A & C: 22 storeys, Zone B: 29 storeys",
+      "5 levels of basement car parking",
+      "45,000 sq.ft. grand double-heighted lobby",
+      "180 slabs casted in 6 months",
+    ],
+    amenities: [
+      "Fitness Centre",
+      "Game Simulator",
+      "Kids Play Area",
+      "Kids Pool",
+      "Multipurpose Hall",
+      "Reflexology Path",
+      "Salon and Spa",
+      "Senior Citizen Area",
+      "Squash Court",
+      "Swimming Pool",
+      "Tiered Landscape Gardens",
+      "Walking Path",
+      "Welfare Centre",
+      "Landscaping & Tree Planting",
+    ],
+    configurations: [
+      {
+        type: "3 BHK",
+        size: "976 – 1400 sqft",
+        price: "₹6.5 Cr++",
+      },
+      {
+        type: "3 BHK Luxe",
+        size: "1326 – 1450 sqft",
+        price: "₹12 Cr++",
+      },
+      {
+        type: "4 BHK",
+        size: "2080 – 2400 sqft",
+        price: "₹28 Cr++",
+      },
+    ],
+    possession: {
+      constructionTarget: "Completed",
+      reraCommitment: "Completed",
+    },
+    rera: "P51800004889",
+    contact: {
+      name: "Sales Team",
+      phone: "N/A",
+    },
+    image: "/properties/property-5.jpg",
+    gallery: [
+      "properties/property-1.jpg",
+      "properties/property-2.jpg",
+      "properties/property-3.jpg",
+      "properties/property-4.jpg",
+      "properties/property-5.jpg",
+    ],
+    driveLink: "https://drive.google.com/file/d/1t7EyOBEvxRnvEbhw6znhJyAFbaVxmFex/view?usp=drive_link",
   },
   {
     id: "6",
-    title: "Prime Retail Space",
-    price: 2100000,
-    location: "SoHo, New York",
-    type: "Retail",
-    area: 3500,
-    image: "/properties/property-6.jpg",
-    featured: false,
-    description: "High-visibility retail space in the heart of SoHo's premier shopping district. This street-level space features extensive frontage, high ceilings, and premium finishes. Perfect for flagship stores, galleries, or upscale dining establishments.",
-    amenities: ["Street Frontage", "Display Windows", "Loading Dock", "Storage Basement", "HVAC", "ADA Compliant"],
-    gallery: ["/properties/property-6.jpg", "/properties/property-6-2.jpg", "/properties/property-6-3.jpg"]
-  },
-  {
-    id: "7",
-    title: "Suburban Family Estate",
-    price: 1950000,
-    location: "Greenwich, Connecticut",
-    type: "Villa",
-    bedrooms: 5,
-    bathrooms: 4,
-    area: 4800,
-    image: "/properties/property-7.jpg",
-    featured: false,
-    description: "Elegant family estate set on two acres of manicured grounds. This classic residence combines timeless architecture with modern amenities. Features include a gourmet kitchen, formal living spaces, home office, and a spectacular backyard with pool and outdoor entertaining areas.",
-    amenities: ["Swimming Pool", "Tennis Court", "Home Gym", "Wine Room", "Au Pair Suite", "3-Car Garage"],
-    gallery: ["/properties/property-7.jpg", "/properties/property-7-2.jpg", "/properties/property-7-3.jpg"]
-  },
-  {
-    id: "8",
-    title: "Boutique Hotel Conversion",
-    price: 5500000,
-    location: "Chelsea, Manhattan",
-    type: "Commercial",
-    area: 12000,
-    image: "/properties/property-8.jpg",
-    featured: false,
-    description: "Rare opportunity to own a historic building with approved plans for boutique hotel conversion. This landmark property features original architectural details, high ceilings, and unlimited potential. Located in vibrant Chelsea with excellent foot traffic and transit access.",
-    amenities: ["Landmark Status", "Roof Rights", "Development Plans", "Elevator", "Basement", "Courtyard"],
-    gallery: ["/properties/property-8.jpg", "/properties/property-8-2.jpg", "/properties/property-8-3.jpg"]
-  },
-  {
-    id: "9",
-    title: "Harborview Condo",
-    price: 725000,
-    location: "Jersey City, NJ",
+    slug: "5th-avenue-sunteckcity",
+    title: "5th Avenue SunteckCity - Tower 2",
+    developer: "Sunteck Realty Limited (SRL)",
+    tagline: "Ultra-luxury Residences in Goregaon West with Private Elevator & Lobby",
+    location: "Goregaon West, Mumbai, Maharashtra",
     type: "Apartment",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: 1100,
-    image: "/properties/property-9.jpg",
-    featured: false,
-    description: "Modern waterfront condo with stunning Manhattan skyline views. This sun-filled residence features an open floor plan, chef's kitchen, and a private balcony. Building amenities include a rooftop lounge, fitness center, and direct ferry access to NYC.",
-    amenities: ["Balcony", "Doorman", "Pool", "Rooftop Lounge", "Ferry Access", "Parking"],
-    gallery: ["/properties/property-9.jpg", "/properties/property-9-2.jpg", "/properties/property-9-3.jpg"]
+    featured: true,
+    description:
+      "5th Avenue SunteckCity Tower 2 offers 3 & 4 BHK ultra-luxury residences in Goregaon West with expansive city and Aarey views, private lobbies, premium finishes, and over 35 luxury amenities.",
+    highlights: [
+      "3-acre low-density development",
+      "21,000 sq.ft. grand lobby",
+      "35+ luxury amenities with car-free green podium",
+      "1300–1700 sqft homes with Italian marble",
+      "Private Elevator & Private Lobby",
+      "Pre-launch pricing and EOI benefits",
+    ],
+    amenities: [
+      "Fitness Centre",
+      "Swimming Pool",
+      "Kids Play Area",
+      "Multipurpose Hall",
+      "Car-free Green Podium",
+      "Spa & Salon",
+      "Rooftop Decks",
+      "Senior Citizen Area",
+      "Walking Paths",
+      "Landscaped Gardens",
+    ],
+    configurations: [
+      {
+        type: "3 BHK",
+        size: "1300 – 1500 sqft",
+        price: "₹4 Cr++",
+      },
+      {
+        type: "4 BHK",
+        size: "1500 – 1700 sqft",
+        price: "₹6 Cr++",
+      },
+    ],
+    possession: {
+      constructionTarget: "Proposed",
+      reraCommitment: "As per RERA",
+    },
+    rera: "PR1181012502068",
+    contact: {
+      name: "Sunteck Sales Team",
+      phone: "022 6591 1820",
+    },
+    image: "/properties/property-6.jpg",
+    gallery: [
+      "properties/property-1.jpg",
+      "properties/property-2.jpg",
+      "properties/property-3.jpg",
+      "properties/property-4.jpg",
+      "properties/property-5.jpg",
+    ],
+    driveLink: "https://drive.google.com/file/d/1xG8zALCOfdkF64SIxDZJ_H7_5KRSwIZz/view?usp=sharing",
   },
-  {
-    id: "10",
-    title: "Medical Office Building",
-    price: 4200000,
-    location: "Upper East Side, NYC",
-    type: "Commercial",
-    area: 7500,
-    image: "/properties/property-10.jpg",
-    featured: false,
-    description: "Purpose-built medical office building in prestigious Upper East Side location. Features include specialized infrastructure for medical equipment, multiple exam rooms, and dedicated parking. Ideal for medical practices, diagnostic centers, or healthcare-related businesses.",
-    amenities: ["Medical Infrastructure", "Waiting Areas", "Parking Lot", "Elevator", "Generator", "ADA Compliant"],
-    gallery: ["/properties/property-10.jpg", "/properties/property-10-2.jpg", "/properties/property-10-3.jpg"]
-  }
 ]
 
 export function formatPrice(price: number): string {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    maximumFractionDigits: 0
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
   }).format(price)
 }
 
 export function getPropertyById(id: string): Property | undefined {
-  return properties.find(p => p.id === id)
+  return properties.find((p) => p.id === id)
 }
 
 export function getFeaturedProperties(): Property[] {
-  return properties.filter(p => p.featured)
+  return properties.filter((p) => p.featured)
 }

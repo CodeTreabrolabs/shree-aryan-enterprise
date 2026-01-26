@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin, ClipboardCheck } from "lucide-react"
 
 export function Footer() {
   return (
@@ -69,6 +69,12 @@ export function Footer() {
                   +918108917612, +919322635844
                 </a>
               </li>
+              <li className="flex items-center gap-3">
+      <ClipboardCheck className="w-5 h-5 text-primary shrink-0" />
+      <span className="text-background/70 text-sm">
+        MahaRERA No. - A51800011626
+      </span>
+    </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
                 <a href="mailto:aryanestateconsultant10@gmail.com" className="text-background/70 hover:text-background transition-colors text-sm">

@@ -1,16 +1,23 @@
 import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Bed, Bath, Maximize } from "lucide-react"
+import { MapPin, Maximize } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { type Property, formatPrice } from "@/lib/properties"
+import { type Property } from "@/lib/properties"
 
 interface PropertyCardProps {
   property: Property
 }
 
 export function PropertyCard({ property }: PropertyCardProps) {
+  const configs = property.configurations || []
+
+  const startingPrice = configs[0]?.price || "Price on request"
+  const sizes = configs.map((c) => c.size)
+  const sizeRange =
+    sizes.length > 1 ? `${sizes[0]} - ${sizes[sizes.length - 1]}` : sizes[0]
+
   return (
     <Card className="group overflow-hidden border-border hover:shadow-lg transition-all duration-300">
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -33,41 +40,34 @@ export function PropertyCard({ property }: PropertyCardProps) {
           </div>
         )}
       </div>
+
       <CardContent className="p-5">
         <div className="flex items-center gap-2 text-muted-foreground text-sm mb-2">
           <MapPin className="w-4 h-4" />
           <span>{property.location}</span>
         </div>
-        <h3 className="font-serif text-xl font-semibold text-foreground mb-2 line-clamp-1">
+
+        <h3 className="font-serif text-xl font-semibold text-foreground mb-1 line-clamp-1">
           {property.title}
         </h3>
-        <p className="text-2xl font-bold text-primary mb-4">
-          {formatPrice(property.price)}
+
+        {/* ✅ PRICE */}
+        <p className="text-2xl font-bold text-primary mb-3">
+          {startingPrice}
         </p>
-        <div className="flex items-center gap-4 text-muted-foreground text-sm mb-4">
-          {property.bedrooms && (
-            <div className="flex items-center gap-1">
-              <Bed className="w-4 h-4" />
-              <span>{property.bedrooms} Beds</span>
-            </div>
-          )}
-          {property.bathrooms && (
-            <div className="flex items-center gap-1">
-              <Bath className="w-4 h-4" />
-              <span>{property.bathrooms} Baths</span>
-            </div>
-          )}
-          <div className="flex items-center gap-1">
-            <Maximize className="w-4 h-4" />
-            <span>{property.area.toLocaleString()} sqft</span>
-          </div>
+
+        {/* ✅ AREA */}
+        <div className="flex items-center gap-1 text-muted-foreground text-sm mb-4">
+          {/* <Maximize className="w-4 h-4" /> */}
+          <span>{sizeRange || "Size on request"}</span>
         </div>
+
         <div className="flex gap-2">
           <Button asChild variant="outline" className="flex-1 bg-transparent">
-            <Link href={`/properties/${property.id}`}>View Details</Link>
+            <Link href={`/properties/${property.slug}`}>View Details</Link>
           </Button>
           <Button asChild className="flex-1">
-            <Link href={`/contact?property=${property.id}`}>Enquire Now</Link>
+            <Link href={`/contact?property=${property.slug}`}>Enquire Now</Link>
           </Button>
         </div>
       </CardContent>
