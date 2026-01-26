@@ -51,7 +51,6 @@ export default async function PropertyDetailPage({
 
   const bhkTypes = [...new Set(configs.map((c) => c.type))].join(", ");
 
-
   return (
     <main className="min-h-screen bg-background">
       <Header />
@@ -254,6 +253,40 @@ export default async function PropertyDetailPage({
                   </div>
                 </CardContent>
               </Card>
+              {/* Drive Download Links */}
+              {property.driveLink && (
+                <Card className="mt-8">
+                  <CardHeader>
+                    <CardTitle className="font-serif text-2xl">
+                      Download Files
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex flex-col gap-2">
+                    {Array.isArray(property.driveLink) ? (
+                      property.driveLink.map((link, idx) => (
+                        <a
+                          key={idx}
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          Download File {idx + 1}
+                        </a>
+                      ))
+                    ) : (
+                      <a
+                        href={property.driveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        Download
+                      </a>
+                    )}
+                  </CardContent>
+                </Card>
+              )}
             </div>
 
             {/* Enquiry Form */}
