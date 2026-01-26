@@ -215,7 +215,7 @@ export default function AboutPage() {
               <div className="space-y-4 pt-8">
                 <div className="aspect-square relative rounded-lg overflow-hidden">
                   <Image
-                    src="/properties/property-3.jpg"
+                    src="properties/property-3.jpg"
                     alt="Office space"
                     fill
                     className="object-cover"
