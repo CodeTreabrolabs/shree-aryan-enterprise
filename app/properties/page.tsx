@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { PropertyCard } from "@/components/property-card"
-import { properties } from "@/lib/properties"
+import { properties, type Property } from "@/lib/properties"
 
 const propertyTypes = ["All", "Apartment", "Villa", "Commercial", "Office", "Retail"]
 
@@ -16,6 +16,41 @@ export default function PropertiesPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedType, setSelectedType] = useState("All")
   const [sortBy, setSortBy] = useState("featured")
+
+  const parsePriceValue = (priceStr?: string) => {
+    if (!priceStr) return Number.POSITIVE_INFINITY
+    const lowered = priceStr.toLowerCase()
+    if (lowered.includes("sold") || lowered.includes("request")) return Number.POSITIVE_INFINITY
+
+    const croreMatch = priceStr.match(/([\d.]+)\s*cr/i)
+    if (croreMatch) return parseFloat(croreMatch[1]) * 1e7
+
+    const numeric = priceStr.replace(/[^\d.]/g, "")
+    return numeric ? parseFloat(numeric) : Number.POSITIVE_INFINITY
+  }
+
+  const getLowestPrice = (property: Property) => {
+    return (
+      property.configurations?.reduce((min, config) => {
+        const value = parsePriceValue(config.price)
+        return Math.min(min, value)
+      }, Number.POSITIVE_INFINITY) ?? Number.POSITIVE_INFINITY
+    )
+  }
+
+  const parseAreaValue = (sizeStr?: string) => {
+    if (!sizeStr) return 0
+    const matches = sizeStr.match(/[\d.]+/g)
+    if (!matches) return 0
+    return Math.max(...matches.map((n) => parseFloat(n)))
+  }
+
+  const getLargestArea = (property: Property) => {
+    return property.configurations?.reduce((max, config) => {
+      const value = parseAreaValue(config.size)
+      return Math.max(max, value)
+    }, 0) ?? 0
+  }
 
   const filteredProperties = properties
     .filter((property) => {
@@ -27,11 +62,11 @@ export default function PropertiesPage() {
     .sort((a, b) => {
       switch (sortBy) {
         case "price-low":
-          return a.price - b.price
+          return getLowestPrice(a) - getLowestPrice(b)
         case "price-high":
-          return b.price - a.price
+          return getLowestPrice(b) - getLowestPrice(a)
         case "area":
-          return b.area - a.area
+          return getLargestArea(b) - getLargestArea(a)
         case "featured":
         default:
           return (b.featured ? 1 : 0) - (a.featured ? 1 : 0)

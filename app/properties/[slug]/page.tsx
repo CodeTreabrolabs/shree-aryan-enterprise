@@ -56,56 +56,57 @@ export default async function PropertyDetailPage({
       <Header />
 
       {/* Back Button */}
-      <div className="pt-24 pb-4 bg-background">
+      <div className="pt-16 md:pt-24 pb-2 md:pb-4 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button variant="ghost" asChild className="gap-2">
+          <Button variant="ghost" asChild className="gap-2 text-sm md:text-base">
             <Link href="/properties">
               <ArrowLeft className="w-4 h-4" />
-              Back to Properties
+              <span className="hidden sm:inline">Back to Properties</span>
+              <span className="sm:hidden">Back</span>
             </Link>
           </Button>
         </div>
       </div>
 
       {/* Property Header */}
-      <section className="pb-8 bg-background">
+      <section className="pb-6 md:pb-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+          <div className="flex flex-col gap-4 lg:gap-6">
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <Badge className="bg-primary text-primary-foreground">
+              <div className="flex items-center gap-2 mb-2 md:mb-3 flex-wrap">
+                <Badge className="bg-primary text-primary-foreground text-xs md:text-sm">
                   {property.type}
                 </Badge>
                 {property.featured && (
-                  <Badge variant="secondary">Featured</Badge>
+                  <Badge variant="secondary" className="text-xs md:text-sm">Featured</Badge>
                 )}
               </div>
-              <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">
                 {property.title}
               </h1>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <MapPin className="w-5 h-5" />
-                <span>{property.location}</span>
+              <div className="flex items-start gap-2 text-muted-foreground text-sm md:text-base">
+                <MapPin className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 mt-0.5" />
+                <span className="break-words">{property.location}</span>
               </div>
             </div>
 
             {/* ✅ PRICE */}
-            <div className="text-left lg:text-right">
-              <p className="text-3xl md:text-4xl font-bold text-primary">
+            <div className="bg-background">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
                 {startingPrice}
               </p>
-              <p className="text-muted-foreground text-sm">Starting Price</p>
+              <p className="text-muted-foreground text-xs md:text-sm">Starting Price</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Image Gallery */}
-      <section className="pb-12 bg-background">
+      <section className="pb-8 md:pb-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-4">
             <div className="lg:col-span-2">
-              <div className="aspect-[16/10] relative rounded-lg overflow-hidden">
+              <div className="aspect-video md:aspect-[16/10] relative rounded-lg overflow-hidden shadow-sm">
                 <Image
                   src={property.image || "/placeholder.svg"}
                   alt={property.title}
@@ -115,11 +116,11 @@ export default async function PropertyDetailPage({
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4">
               {property.gallery?.slice(0, 2).map((img, i) => (
                 <div
                   key={img}
-                  className="aspect-[16/10] lg:aspect-[16/8] relative rounded-lg overflow-hidden"
+                  className="aspect-video lg:aspect-[16/8] relative rounded-lg overflow-hidden shadow-sm"
                 >
                   <Image
                     src={img}
@@ -135,30 +136,30 @@ export default async function PropertyDetailPage({
       </section>
 
       {/* Property Details */}
-      <section className="py-12 bg-secondary">
+      <section className="py-8 md:py-12 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid gap-8 lg:gap-8 grid-cols-1 lg:grid-cols-3">
             {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-6 md:space-y-8">
               {/* Quick Stats */}
               <Card className="border-border/60 shadow-sm">
-                <CardContent className="p-6">
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <CardContent className="p-4 md:p-6">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                     {/* CONFIG TYPES */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-border/60 bg-background px-4 py-5 text-center transition hover:shadow-sm">
-                      <Home className="w-5 h-5 mb-2 text-primary" />
-                      <p className="text-lg font-semibold text-foreground leading-tight">
+                    <div className="flex flex-col items-center justify-center rounded-lg md:rounded-xl border border-border/60 bg-background px-3 md:px-4 py-4 md:py-5 text-center transition hover:shadow-sm">
+                      <Home className="w-4 h-4 md:w-5 md:h-5 mb-2 text-primary" />
+                      <p className="text-base md:text-lg font-semibold text-foreground leading-tight text-xs md:text-sm">
                         {bhkTypes || "—"}
                       </p>
                       <p className="text-xs uppercase tracking-wide text-muted-foreground mt-1">
-                        Configurations
+                        Config
                       </p>
                     </div>
 
                     {/* SIZE */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-border/60 bg-background px-4 py-5 text-center transition hover:shadow-sm">
-                      <Maximize className="w-5 h-5 mb-2 text-primary" />
-                      <p className="text-lg font-semibold text-foreground leading-tight">
+                    <div className="flex flex-col items-center justify-center rounded-lg md:rounded-xl border border-border/60 bg-background px-3 md:px-4 py-4 md:py-5 text-center transition hover:shadow-sm">
+                      <Maximize className="w-4 h-4 md:w-5 md:h-5 mb-2 text-primary" />
+                      <p className="text-base md:text-lg font-semibold text-foreground leading-tight text-xs md:text-sm">
                         {sizeRange || "—"}
                       </p>
                       <p className="text-xs uppercase tracking-wide text-muted-foreground mt-1">
@@ -167,23 +168,23 @@ export default async function PropertyDetailPage({
                     </div>
 
                     {/* PRICE */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-border/60 bg-background px-4 py-5 text-center transition hover:shadow-sm">
-                      <IndianRupee className="w-5 h-5 mb-2 text-primary" />
-                      <p className="text-lg font-semibold text-primary leading-tight">
+                    <div className="flex flex-col items-center justify-center rounded-lg md:rounded-xl border border-border/60 bg-background px-3 md:px-4 py-4 md:py-5 text-center transition hover:shadow-sm">
+                      <IndianRupee className="w-4 h-4 md:w-5 md:h-5 mb-2 text-primary" />
+                      <p className="text-base md:text-lg font-semibold text-primary leading-tight text-xs md:text-sm">
                         {startingPrice}
                       </p>
                       <p className="text-xs uppercase tracking-wide text-muted-foreground mt-1">
-                        Starting Price
+                        Price
                       </p>
                     </div>
 
                     {/* TYPE */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-border/60 bg-background px-4 py-5 text-center transition hover:shadow-sm">
-                      <Badge className="mb-2 bg-primary/10 text-primary border border-primary/20">
+                    <div className="flex flex-col items-center justify-center rounded-lg md:rounded-xl border border-border/60 bg-background px-3 md:px-4 py-4 md:py-5 text-center transition hover:shadow-sm">
+                      <Badge className="mb-2 bg-primary/10 text-primary border border-primary/20 text-xs">
                         {property.type}
                       </Badge>
                       <p className="text-xs uppercase tracking-wide text-muted-foreground mt-1">
-                        Property Type
+                        Type
                       </p>
                     </div>
                   </div>
@@ -193,12 +194,12 @@ export default async function PropertyDetailPage({
               {/* Description */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-serif text-2xl">
+                  <CardTitle className="font-serif text-xl md:text-2xl">
                     About This Property
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                     {property.description}
                   </p>
                 </CardContent>
@@ -208,21 +209,21 @@ export default async function PropertyDetailPage({
               {configs.length > 0 && (
                 <Card>
                   <CardHeader>
-                    <CardTitle className="font-serif text-2xl">
+                    <CardTitle className="font-serif text-xl md:text-2xl">
                       Available Configurations
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid gap-4">
+                    <div className="grid gap-3 md:gap-4">
                       {configs.map((c, i) => (
                         <div
                           key={i}
-                          className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 border-b pb-3 last:border-none"
+                          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b pb-3 last:border-none text-sm md:text-base"
                         >
                           <div className="font-medium text-foreground">
                             {c.type} {c.wing && `(${c.wing})`}
                           </div>
-                          <div className="text-sm text-muted-foreground">
+                          <div className="text-muted-foreground">
                             {c.size}
                           </div>
                           <div className="font-semibold text-primary">
@@ -238,15 +239,15 @@ export default async function PropertyDetailPage({
               {/* Amenities */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-serif text-2xl">
+                  <CardTitle className="font-serif text-xl md:text-2xl">
                     Amenities & Features
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                     {property.amenities.map((amenity) => (
-                      <div key={amenity} className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                      <div key={amenity} className="flex items-start gap-2 text-sm md:text-base">
+                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 mt-0.5" />
                         <span className="text-foreground">{amenity}</span>
                       </div>
                     ))}
@@ -255,9 +256,9 @@ export default async function PropertyDetailPage({
               </Card>
               {/* Drive Download Links */}
               {property.driveLink && (
-                <Card className="mt-8">
+                <Card className="mt-6 md:mt-8">
                   <CardHeader>
-                    <CardTitle className="font-serif text-2xl">
+                    <CardTitle className="font-serif text-xl md:text-2xl">
                       Download Files
                     </CardTitle>
                   </CardHeader>
@@ -269,7 +270,7 @@ export default async function PropertyDetailPage({
                           href={link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:underline"
+                          className="text-primary hover:underline text-sm md:text-base"
                         >
                           Download File {idx + 1}
                         </a>
@@ -279,7 +280,7 @@ export default async function PropertyDetailPage({
                         href={property.driveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline"
+                        className="text-primary hover:underline text-sm md:text-base"
                       >
                         Download
                       </a>
@@ -291,49 +292,50 @@ export default async function PropertyDetailPage({
 
             {/* Enquiry Form */}
             <div className="lg:col-span-1">
-              <Card className="sticky top-28">
+              <Card className="sticky top-20 md:top-28">
                 <CardHeader>
-                  <CardTitle className="font-serif text-xl">
+                  <CardTitle className="font-serif text-lg md:text-xl">
                     Interested in This Property?
                   </CardTitle>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-xs md:text-sm">
                     Fill out the form below and our team will get back to you
                     shortly.
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-4">
-                    <Input placeholder="Your Name" />
-                    <Input type="tel" placeholder="Phone Number" />
-                    <Input type="email" placeholder="Email Address" />
+                  <form className="space-y-3 md:space-y-4">
+                    <Input placeholder="Your Name" className="text-sm md:text-base" />
+                    <Input type="tel" placeholder="Phone Number" className="text-sm md:text-base" />
+                    <Input type="email" placeholder="Email Address" className="text-sm md:text-base" />
                     <Textarea
                       placeholder="Tell us about your requirements..."
-                      rows={4}
+                      rows={3}
                       defaultValue={`I am interested in "${property.title}" at ${property.location}.`}
+                      className="text-sm md:text-base"
                     />
-                    <Button className="w-full" size="lg">
+                    <Button className="w-full text-sm md:text-base" size="lg">
                       Submit Enquiry
                     </Button>
                   </form>
 
-                  <div className="mt-6 pt-6 border-t border-border">
-                    <p className="text-sm text-muted-foreground mb-4">
+                  <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border">
+                    <p className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
                       Or contact us directly:
                     </p>
                     <div className="space-y-3">
                       <a
                         href="tel:++919322635844"
-                        className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                        className="flex items-start md:items-center gap-3 text-foreground hover:text-primary transition-colors text-sm md:text-base"
                       >
-                        <Phone className="w-5 h-5 text-primary" />
+                        <Phone className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 mt-0.5 md:mt-0" />
                         <span>+918108917612, +919322635844</span>
                       </a>
                       <a
                         href="mailto:aryanestateconsultant10@gmail.com"
-                        className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                        className="flex items-start md:items-center gap-3 text-foreground hover:text-primary transition-colors text-sm md:text-base"
                       >
-                        <Mail className="w-5 h-5 text-primary" />
-                        <span>aryanestateconsultant10@gmail.com</span>
+                        <Mail className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 mt-0.5 md:mt-0" />
+                        <span className="break-all">aryanestateconsultant10@gmail.com</span>
                       </a>
                     </div>
                   </div>

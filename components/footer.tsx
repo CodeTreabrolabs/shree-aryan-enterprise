@@ -9,18 +9,18 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                 <img
                   src="https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769435519/logo_qzj9tg.png"
                   alt="Logo"
-                  className="w-10 h-10 rounded-md hidden sm:block"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-md"
                 />
               </div>
               <div>
-                <span className="font-serif text-xl font-semibold text-background">
+                <span className="font-serif text-lg sm:text-xl font-semibold text-background">
                   Shree Aryan Estate
                 </span>
-                <span className="font-serif text-xl text-primary ml-1">
+                <span className="font-serif text-lg sm:text-xl text-primary ml-1">
                   Enterprise
                 </span>
               </div>
