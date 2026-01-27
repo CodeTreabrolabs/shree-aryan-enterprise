@@ -104,10 +104,15 @@ export default async function PropertyDetailPage({
       <section className="pb-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {/* Main Image */}
             <div className="lg:col-span-2">
               <div className="aspect-[16/10] relative rounded-lg overflow-hidden">
                 <Image
-                  src={property.image || "/placeholder.svg"}
+                  src={
+                    property.image?.startsWith("/")
+                      ? property.image
+                      : `/${property.image}` || "/placeholder.svg"
+                  }
                   alt={property.title}
                   fill
                   className="object-cover"
@@ -115,20 +120,27 @@ export default async function PropertyDetailPage({
                 />
               </div>
             </div>
+
+            {/* Gallery Images */}
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
-              {property.gallery?.slice(0, 2).map((img, i) => (
-                <div
-                  key={img}
-                  className="aspect-[16/10] lg:aspect-[16/8] relative rounded-lg overflow-hidden"
-                >
-                  <Image
-                    src={img}
-                    alt={`${property.title} - View ${i + 2}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
+              {property.gallery?.slice(0, 2).map((img, i) => {
+                const src = img?.startsWith("/")
+                  ? img
+                  : `/${img}` || "/placeholder.svg";
+                return (
+                  <div
+                    key={i}
+                    className="aspect-[16/10] lg:aspect-[16/8] relative rounded-lg overflow-hidden"
+                  >
+                    <Image
+                      src={src}
+                      alt={`${property.title} - View ${i + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
