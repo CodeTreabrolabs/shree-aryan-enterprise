@@ -17,10 +17,10 @@ export function Footer() {
                 />
               </div>
               <div>
-                <span className="font-serif text-lg sm:text-xl font-semibold text-background">
+                <span className="font-serif text-lg sm:text-xl font-semibold text-[#4F95C9]">
                   Shree Aryan Estate
                 </span>
-                <span className="font-serif text-lg sm:text-xl text-primary ml-1">
+                <span className="font-serif text-lg sm:text-xl text-[#4F95C9] ml-1">
                   Enterprise
                 </span>
               </div>
@@ -93,7 +93,7 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <a
-                  href="tel:++919322635844"
+                  href="tel:+919322635844"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   +918108917612, +919322635844
@@ -125,6 +125,24 @@ export function Footer() {
               © {new Date().getFullYear()} Shree Aryan Estate Enterprise. All
               rights reserved.
             </p>
+          </div>
+          <div className="flex justify-center items-center gap-2 mt-4">
+            <p className="text-background/50 text-sm">
+              Made with <span className="text-red-500">❤️</span> by
+            </p>
+            <a
+              href="https://treabrolabs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-background/70 hover:text-background transition-colors text-sm"
+            >
+              <img
+                src="https://treabrolabs.com/favicon.ico"
+                alt="Treabrolabs"
+                className="w-4 h-4"
+              />
+              <span>Treabrolabs</span>
+            </a>
           </div>
         </div>
       </div>

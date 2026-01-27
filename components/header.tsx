@@ -26,7 +26,7 @@ export function Header() {
             </div>
             <div className="hidden sm:block">
               <span className="font-serif text-lg sm:text-xl font-semibold text-foreground">Shree Aryan Estate</span>
-              <span className="font-serif text-lg sm:text-xl text-primary ml-1">Enterprise</span>
+              <span className="font-serif text-lg sm:text-xl text-[#4F95C9] ml-1">Enterprise</span>
             </div>
           </Link>
 
@@ -80,7 +80,7 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-4 border-t border-border space-y-3">
-              <a href="tel:++919322635844" className="flex items-center gap-2 text-muted-foreground">
+              <a href="tel:+919322635844" className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="w-4 h-4" />
                 <span>+919322635844</span>
               </a>

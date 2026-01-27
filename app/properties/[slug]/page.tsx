@@ -271,7 +271,7 @@ export default async function PropertyDetailPage({
                 <Card className="mt-6 md:mt-8">
                   <CardHeader>
                     <CardTitle className="font-serif text-xl md:text-2xl">
-                      Download Files
+                      View Brochure
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex flex-col gap-2">
@@ -284,7 +284,7 @@ export default async function PropertyDetailPage({
                           rel="noopener noreferrer"
                           className="text-primary hover:underline text-sm md:text-base"
                         >
-                          Download File {idx + 1}
+                          View File {idx + 1}
                         </a>
                       ))
                     ) : (
@@ -294,7 +294,7 @@ export default async function PropertyDetailPage({
                         rel="noopener noreferrer"
                         className="text-primary hover:underline text-sm md:text-base"
                       >
-                        Download
+                        View File
                       </a>
                     )}
                   </CardContent>
@@ -347,7 +347,7 @@ export default async function PropertyDetailPage({
                     </p>
                     <div className="space-y-3">
                       <a
-                        href="tel:++919322635844"
+                        href="tel:+919322635844"
                         className="flex items-start md:items-center gap-3 text-foreground hover:text-primary transition-colors text-sm md:text-base"
                       >
                         <Phone className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 mt-0.5 md:mt-0" />

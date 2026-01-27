@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer"
 
 const team = [
   {
-    name: "Santosh Choudhary",
+    name: "Santosh Vishwanath Choudhary",
     role: "Founder & CEO",
     image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769489970/santosh_uznwac.jpg",
     bio: "Santosh leads Shree Aryan Estate Enterprise with a client-first philosophy, combining market expertise with personalized guidance."

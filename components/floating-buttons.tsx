@@ -20,7 +20,7 @@ export function FloatingButtons() {
       
       {/* Call Button */}
       <a
-        href="tel:++919322635844"
+        href="tel:+919322635844"
         className="w-14 h-14 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300"
         aria-label="Call us"
       >

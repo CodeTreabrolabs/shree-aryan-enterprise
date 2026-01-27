@@ -186,7 +186,7 @@ export default function HomePage() {
                 <p className="text-primary-foreground font-medium text-lg">
                   Schedule a consultation today and let us help you find your perfect property.
                 </p>
-                <a href="tel:++919322635844" className="flex items-center gap-2 mt-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="tel:+919322635844" className="flex items-center gap-2 mt-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   <Phone className="w-4 h-4" />
                   <span>+918108917612, +919322635844</span>
                 </a>
