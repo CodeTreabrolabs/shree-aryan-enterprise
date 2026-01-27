@@ -274,7 +274,7 @@ export default function ContactPage() {
                       </div>
                     </a>
                     <a
-                      href="https://wa.me/+919322635844"
+                      href="https://wa.me/+919322635844?text=Hi, I'm interested in your property listings."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-primary-foreground hover:text-primary-foreground/80 transition-colors"

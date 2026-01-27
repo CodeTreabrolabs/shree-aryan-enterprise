@@ -21,12 +21,12 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-              <img src="https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769435519/logo_qzj9tg.png" alt="Logo" className="w-10 h-10 rounded-md hidden sm:block" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
+              <img src="https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769435519/logo_qzj9tg.png" alt="Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-md" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-serif text-xl font-semibold text-foreground">Shree Aryan Estate</span>
-              <span className="font-serif text-xl text-primary ml-1">Enterprise</span>
+              <span className="font-serif text-lg sm:text-xl font-semibold text-foreground">Shree Aryan Estate</span>
+              <span className="font-serif text-lg sm:text-xl text-primary ml-1">Enterprise</span>
             </div>
           </Link>
 
