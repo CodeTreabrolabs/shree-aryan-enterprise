@@ -206,7 +206,7 @@ export const properties: Property[] = [
     title: "Shapoorji Minerva Towers",
     developer: "Shapoorji Pallonji",
     tagline:
-      "South Mumbai's tallest icon by Shapoorji Pallonji — where sky-high living meets timeless luxury.",
+      "South Mumbai's tallest icon by Shapoorji Pallonji, where sky-high living meets timeless luxury.",
     location: "Mahalakshmi, South Mumbai",
     type: "Luxury",
     featured: true,
@@ -233,7 +233,7 @@ export const properties: Property[] = [
         type: "4 BHK",
         size: "2019 sq.ft including 278 sq.ft deck",
         price: "₹14.45 Cr++",
-        facing: "East–West facing — Race Course & Eastern Seaboard",
+        facing: "East–West facing, Race Course & Eastern Seaboard",
       },
       {
         type: "3.5 BHK",

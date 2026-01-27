@@ -17,21 +17,22 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "Shree Aryan Estate Enterprise made finding our dream home effortless. Their expertise and personalized approach exceeded our expectations.",
-    author: "Michael & Sarah Johnson",
-    role: "Homeowners, Manhattan"
+    quote: "Shree Aryan Estate Enterprise understood our requirements clearly and showed us only genuine options. The entire buying process was smooth and stress-free.",
+    author: "Rahul Sharma & Neha Sharma",
+    role: "Homebuyers, Mumbai"
   },
   {
-    quote: "The team's deep market knowledge helped us secure the perfect commercial space for our business. Truly exceptional service.",
-    author: "David Chen",
-    role: "Business Owner, SoHo"
+    quote: "We were looking for a commercial space within a tight timeline. Their market knowledge and transparent approach helped us close the deal quickly.",
+    author: "Ankur Singh",
+    role: "Business Owner, Marol"
   },
   {
-    quote: "Professional, knowledgeable, and always available. They guided us through every step of our property investment journey.",
-    author: "Emily Rodriguez",
-    role: "Property Investor"
+    quote: "Very professional team. They guided me properly on location, pricing, and future value before I made my investment decision.",
+    author: "Priyanshi Desai",
+    role: "Property Investor, Mahakali Caves"
   }
 ]
+
 
 export default function HomePage() {
   const featuredProperties = getFeaturedProperties().slice(0, 4)
@@ -62,7 +63,7 @@ export default function HomePage() {
               Find Your Perfect Property with Expert Guidance
             </h1>
             <p className="text-lg text-background/80 mb-8 max-w-xl leading-relaxed">
-              We are not just brokers — we are your trusted advisors in navigating the premium real estate market. Let us help you find the property that matches your vision.
+              We are not just brokers. we are your trusted advisors in navigating the premium real estate market. Let us help you find the property that matches your vision.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="text-base">

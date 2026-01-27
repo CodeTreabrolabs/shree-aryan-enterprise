@@ -8,22 +8,10 @@ import { Footer } from "@/components/footer"
 
 const team = [
   {
-    name: "Robert Mitchell",
+    name: "Santosh Choudhary",
     role: "Founder & CEO",
-    image: "/team/team-1.jpg",
-    bio: "With over 20 years in premium real estate, Robert founded Shree Aryan Estate Enterprise to redefine property consulting."
-  },
-  {
-    name: "Sarah Chen",
-    role: "Director of Sales",
-    image: "/team/team-2.jpg",
-    bio: "Sarah brings 15 years of experience in luxury residential and commercial property transactions."
-  },
-  {
-    name: "James Wilson",
-    role: "Senior Consultant",
-    image: "/team/team-3.jpg",
-    bio: "James specializes in investment properties and has helped clients build portfolios worth millions."
+    image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769489970/santosh_uznwac.jpg",
+    bio: "Santosh leads Shree Aryan Estate Enterprise with a client-first philosophy, combining market expertise with personalized guidance."
   }
 ]
 
@@ -68,7 +56,7 @@ export default function AboutPage() {
               Your Trusted Real Estate Advisors
             </h1>
             <p className="text-background/70 max-w-2xl mx-auto">
-              More than brokers — we are consultants dedicated to guiding you through every step of your property journey.
+              More than brokers, we are consultants dedicated to guiding you through every step of your property journey.
             </p>
           </div>
         </div>
@@ -102,7 +90,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 2009, Shree Aryan Estate Enterprise was born from a simple belief: real estate transactions should be guided by expertise, not just facilitated. Our founder, Robert Mitchell, recognized that clients deserved more than a transactional relationship — they needed a trusted advisor.
+                  Founded in 2009, Shree Aryan Estate Enterprise was born from a simple belief: real estate transactions should be guided by expertise, not just facilitated. Our founder, Robert Mitchell, recognized that clients deserved more than a transactional relationship, they needed a trusted advisor.
                 </p>
                 <p>
                   Over the past 15 years, we have grown from a boutique consultancy to one of the region&apos;s most respected real estate firms. Our approach has always been consultative: understanding our clients&apos; unique needs, providing market insights, and guiding them to properties that truly match their vision.
@@ -243,22 +231,23 @@ export default function AboutPage() {
               Our Team
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-              Meet the Experts
+              Meet the Expert
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our team brings decades of combined experience in premium real estate, dedicated to helping you achieve your property goals.
+              Led by a single point of trust for every real estate decision.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center gap-8">
             {team.map((member) => (
-              <Card key={member.name} className="overflow-hidden">
+              <Card key={member.name} className="overflow-hidden w-full max-w-sm">
                 <div className="aspect-[4/5] relative">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 <CardContent className="p-6 text-center">
