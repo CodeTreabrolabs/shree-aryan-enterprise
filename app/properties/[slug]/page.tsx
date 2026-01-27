@@ -58,7 +58,11 @@ export default async function PropertyDetailPage({
       {/* Back Button */}
       <div className="pt-16 md:pt-24 pb-2 md:pb-4 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button variant="ghost" asChild className="gap-2 text-sm md:text-base">
+          <Button
+            variant="ghost"
+            asChild
+            className="gap-2 text-sm md:text-base"
+          >
             <Link href="/properties">
               <ArrowLeft className="w-4 h-4" />
               <span className="hidden sm:inline">Back to Properties</span>
@@ -78,7 +82,9 @@ export default async function PropertyDetailPage({
                   {property.type}
                 </Badge>
                 {property.featured && (
-                  <Badge variant="secondary" className="text-xs md:text-sm">Featured</Badge>
+                  <Badge variant="secondary" className="text-xs md:text-sm">
+                    Featured
+                  </Badge>
                 )}
               </div>
               <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">
@@ -95,18 +101,21 @@ export default async function PropertyDetailPage({
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
                 {startingPrice}
               </p>
-              <p className="text-muted-foreground text-xs md:text-sm">Starting Price</p>
+              <p className="text-muted-foreground text-xs md:text-sm">
+                Starting Price
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Image Gallery */}
-      <section className="pb-8 md:pb-12 bg-background">
+      <section className="pb-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {/* Main Image */}
             <div className="lg:col-span-2">
-              <div className="aspect-video md:aspect-[16/10] relative rounded-lg overflow-hidden shadow-sm">
+              <div className="aspect-[16/10] relative rounded-lg overflow-hidden">
                 <Image
                   src={property.image || "/placeholder.svg"}
                   alt={property.title}
@@ -116,15 +125,17 @@ export default async function PropertyDetailPage({
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4">
+
+            {/* Gallery Images */}
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
               {property.gallery?.slice(0, 2).map((img, i) => (
                 <div
-                  key={img}
-                  className="aspect-video lg:aspect-[16/8] relative rounded-lg overflow-hidden shadow-sm"
+                  key={i}
+                  className="aspect-[16/10] lg:aspect-[16/8] relative rounded-lg overflow-hidden"
                 >
                   <Image
-                    src={img}
-                    alt={`${property.title} - View ${i + 2}`}
+                    src={img || "/placeholder.svg"}
+                    alt={`${property.title} - View ${i + 1}`}
                     fill
                     className="object-cover"
                   />
@@ -223,9 +234,7 @@ export default async function PropertyDetailPage({
                           <div className="font-medium text-foreground">
                             {c.type} {c.wing && `(${c.wing})`}
                           </div>
-                          <div className="text-muted-foreground">
-                            {c.size}
-                          </div>
+                          <div className="text-muted-foreground">{c.size}</div>
                           <div className="font-semibold text-primary">
                             {c.price}
                           </div>
@@ -246,7 +255,10 @@ export default async function PropertyDetailPage({
                 <CardContent>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                     {property.amenities.map((amenity) => (
-                      <div key={amenity} className="flex items-start gap-2 text-sm md:text-base">
+                      <div
+                        key={amenity}
+                        className="flex items-start gap-2 text-sm md:text-base"
+                      >
                         <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 mt-0.5" />
                         <span className="text-foreground">{amenity}</span>
                       </div>
@@ -304,9 +316,20 @@ export default async function PropertyDetailPage({
                 </CardHeader>
                 <CardContent>
                   <form className="space-y-3 md:space-y-4">
-                    <Input placeholder="Your Name" className="text-sm md:text-base" />
-                    <Input type="tel" placeholder="Phone Number" className="text-sm md:text-base" />
-                    <Input type="email" placeholder="Email Address" className="text-sm md:text-base" />
+                    <Input
+                      placeholder="Your Name"
+                      className="text-sm md:text-base"
+                    />
+                    <Input
+                      type="tel"
+                      placeholder="Phone Number"
+                      className="text-sm md:text-base"
+                    />
+                    <Input
+                      type="email"
+                      placeholder="Email Address"
+                      className="text-sm md:text-base"
+                    />
                     <Textarea
                       placeholder="Tell us about your requirements..."
                       rows={3}
@@ -335,7 +358,9 @@ export default async function PropertyDetailPage({
                         className="flex items-start md:items-center gap-3 text-foreground hover:text-primary transition-colors text-sm md:text-base"
                       >
                         <Mail className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 mt-0.5 md:mt-0" />
-                        <span className="break-all">aryanestateconsultant10@gmail.com</span>
+                        <span className="break-all">
+                          aryanestateconsultant10@gmail.com
+                        </span>
                       </a>
                     </div>
                   </div>
