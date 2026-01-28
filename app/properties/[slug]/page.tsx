@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { properties } from "@/lib/properties";
+import { PropertyEnquiryForm } from "@/components/property-enquiry-form";
 
 // Helper to get property by slug
 export function getPropertyBySlug(slug: string) {
@@ -304,68 +305,7 @@ export default async function PropertyDetailPage({
 
             {/* Enquiry Form */}
             <div className="lg:col-span-1">
-              <Card className="sticky top-20 md:top-28">
-                <CardHeader>
-                  <CardTitle className="font-serif text-lg md:text-xl">
-                    Interested in This Property?
-                  </CardTitle>
-                  <p className="text-muted-foreground text-xs md:text-sm">
-                    Fill out the form below and our team will get back to you
-                    shortly.
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-3 md:space-y-4">
-                    <Input
-                      placeholder="Your Name"
-                      className="text-sm md:text-base"
-                    />
-                    <Input
-                      type="tel"
-                      placeholder="Phone Number"
-                      className="text-sm md:text-base"
-                    />
-                    <Input
-                      type="email"
-                      placeholder="Email Address"
-                      className="text-sm md:text-base"
-                    />
-                    <Textarea
-                      placeholder="Tell us about your requirements..."
-                      rows={3}
-                      defaultValue={`I am interested in "${property.title}" at ${property.location}.`}
-                      className="text-sm md:text-base"
-                    />
-                    <Button className="w-full text-sm md:text-base" size="lg">
-                      Submit Enquiry
-                    </Button>
-                  </form>
-
-                  <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border">
-                    <p className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
-                      Or contact us directly:
-                    </p>
-                    <div className="space-y-3">
-                      <a
-                        href="tel:+919322635844"
-                        className="flex items-start md:items-center gap-3 text-foreground hover:text-primary transition-colors text-sm md:text-base"
-                      >
-                        <Phone className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 mt-0.5 md:mt-0" />
-                        <span>+918108917612, +919322635844</span>
-                      </a>
-                      <a
-                        href="mailto:aryanestateconsultant10@gmail.com"
-                        className="flex items-start md:items-center gap-3 text-foreground hover:text-primary transition-colors text-sm md:text-base"
-                      >
-                        <Mail className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0 mt-0.5 md:mt-0" />
-                        <span className="break-all">
-                          aryanestateconsultant10@gmail.com
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <PropertyEnquiryForm property={property} />
             </div>
           </div>
         </div>

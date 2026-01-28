@@ -3,6 +3,8 @@
 import React from "react"
 
 import { useState } from "react"
+import { v4 as uuidv4 } from "uuid"
+import axios from "axios"
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -53,10 +55,83 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
+
+    // Generate UUID for anonymous_id
+    const anonymous_id = uuidv4()
+    const now = new Date()
+    const created_at = now.toISOString()
+
+    // Prepare submitted_fields array as per API format
+    const submitted_fields = [
+      {
+        key: "name",
+        type: "text",
+        label: "Full Name",
+        required: true,
+        placeholder: "Enter Your Full Name",
+        value: formData.name
+      },
+      {
+        key: "email",
+        type: "email",
+        label: "Email Address",
+        required: true,
+        placeholder: "Enter Your Email Address",
+        value: formData.email
+      },
+      {
+        key: "field_1766940515513",
+        type: "textarea",
+        label: "Message",
+        required: true,
+        placeholder: "Enter Your message here",
+        value: formData.message
+      },
+      {
+        key: "phone",
+        type: "text",
+        label: "Phone Number",
+        required: true,
+        placeholder: "Enter Your Phone Number",
+        value: formData.phone
+      },
+      {
+        key: "requirement",
+        type: "select",
+        label: "What are you looking for?",
+        required: false,
+        placeholder: "Select an option",
+        value: formData.requirement
+      }
+    ]
+
+    // Prepare payload
+    const payload = {
+      anonymous_id,
+      user_widget: 96,
+      submitted_fields,
+      created_at
+    }
+
+    try {
+      await axios.post(
+        "https://api.getwidgets.app/api/widgets/user-widgets/5c580c5c-b25b-4070-bd5e-ba67b10531a3/contact/",
+        payload,
+        { headers: { "Content-Type": "application/json" } }
+      )
+      
+      // Prepare WhatsApp message with form data
+      const whatsappMessage = `*Contact Form Submission*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Email:* ${formData.email}\n*Requirement:* ${formData.requirement}\n*Message:* ${formData.message}`;
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappUrl = `https://wa.me/919322635844?text=${encodedMessage}`;
+      
+      // Redirect to WhatsApp
+      window.open(whatsappUrl, '_blank');
+      
+    } catch (error) {
+      // Optionally handle error
+    }
+
     setIsSubmitting(false)
     setIsSubmitted(true)
     setFormData({ name: "", phone: "", email: "", requirement: "", message: "" })
@@ -227,6 +302,16 @@ export default function ContactPage() {
                       </Button>
                     </form>
                   )}
+                  <div className="mt-4 pt-4 border-t text-center">
+                    <a 
+                      href="https://www.widgetkraft.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-xs text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      Powered by WidgetKraft
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </div>

@@ -636,6 +636,71 @@ export const properties: Property[] = [
       "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769505002/raj-2_loue6a.png",
     ],
   },
+  {
+    id: "10",
+    slug: "runwal-raaya-worli",
+    title: "Runwal Raaya Worli",
+    developer: "Runwal",
+    tagline: "Ultra-Luxury Living in Worli - Private Elevators & Bronze-Finished Windows",
+    location: "Worli, Mumbai",
+    type: "Luxury",
+    featured: true,
+    description:
+      "Runwal Raaya Worli is an ultra-luxury residential development offering bespoke living experiences with curated amenities, private elevators, and exquisite architectural details. Located on 4.2 acres in prime Worli, featuring two iconic towers with 300 units of premium configurations.",
+    highlights: [
+      "4.2 Acre Land Parcel",
+      "Tower-1: 72 floors with Warm Shell Apartments",
+      "Tower-2: 68 floors with Bare Shell Apartments",
+      "30,000 sq. ft. Clubhouse",
+      "60+ Curated Amenities",
+      "Private Elevators",
+      "Bronze-Finished Openable Windows",
+      "Landscaping by Site Tech-tonics",
+      "Structural Architecture by Broadway Malyan",
+    ],
+    amenities: [
+      "60+ Curated Amenities",
+      "Private Elevators",
+      "Bronze-Finished Openable Windows",
+      "Landscaping by Site Tech-tonics",
+      "Structural Architect - Broadway Malyan",
+      "30,000 sq. ft. Clubhouse",
+      "Grand Entrance Lobby",
+      "24x7 CCTV & Security",
+      "Fire Safety Systems",
+      "Ample Parking Space",
+    ],
+    configurations: [
+      {
+        wing: "Tower-1",
+        type: "3 BHK",
+        size: "1738 – 1979 sq. ft.",
+        price: "₹65,000 psf++",
+      },
+      {
+        wing: "Tower-1",
+        type: "4 BHK",
+        size: "2208 – 2508 sq. ft.",
+        price: "₹65,000 psf++",
+      },
+      {
+        wing: "Tower-2",
+        type: "5 BHK",
+        size: "4285 – 4881 sq. ft.",
+        price: "₹65,000 psf++",
+      },
+    ],
+    possession: {
+      constructionTarget: "2030",
+      reraCommitment: "2030",
+    },
+    image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769595147/raya-1_qukgx1.jpg",
+    gallery: [
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769595150/raya-2_f8myb4.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769595148/raya-3_hxdnmo.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769595147/raya-1_qukgx1.jpg",
+    ],
+  },
 ]
 
 export function formatPrice(price: number): string {
