@@ -4,6 +4,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { FloatingButtons } from '@/components/floating-buttons'
 import { EngagementPopups } from '@/components/engagement-popups'
+import { LiveChatWidget } from '@/components/live-chat-widget'
 import './globals.css'
 
 const _inter = Inter({ subsets: ["latin"] });
@@ -64,6 +65,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased">
         {children}
+        <LiveChatWidget />
         <FloatingButtons />
         <EngagementPopups />
         <Analytics />
