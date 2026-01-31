@@ -701,6 +701,142 @@ export const properties: Property[] = [
       "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769595147/raya-1_qukgx1.jpg",
     ],
   },
+  {
+    id: "11",
+    slug: "west-10-andheri-west",
+    title: "WEST 10 (Exclusive Opportunity – New Launch)",
+    developer: "Code Name: WEST 10",
+    tagline: "Luxury 2 & 4 BHK elite residences with 15+ premium lifestyle amenities.",
+    location:
+      "Opp. BMW Showroom, CD Barfiwala Road, Juhu Lane, Andheri West, Mumbai – 400058",
+    type: "Luxury",
+    featured: true,
+    description:
+      "WEST 10 is an exclusive new launch in Andheri West offering luxury 2 & 4 BHK elite residences. Plinth completed and construction is in full swing with a limited-period offer and attractive builder subvention plan.",
+    highlights: [
+      "15+ premium lifestyle amenities",
+      "Attractive builder subvention plan",
+      "30% on booking, 40% on top slab, 30% on possession",
+      "Limited-period offer",
+      "Plinth completed; construction in full swing",
+      "Prime location on Juhu Lane, Andheri West",
+    ],
+    amenities: [
+      "Premium lifestyle amenities",
+      "Secure gated access",
+      "Modern fitness facilities",
+      "Landscaped leisure zones",
+      "24x7 Security",
+      "Ample Parking",
+    ],
+    configurations: [
+      {
+        type: "2 BHK",
+        size: "Details on request",
+        price: "Details on request",
+      },
+      {
+        type: "4 BHK",
+        size: "Details on request",
+        price: "Details on request",
+      },
+    ],
+    possession: {
+      constructionTarget: "Plinth completed",
+      reraCommitment: "Construction in full swing",
+    },
+    image:
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769846940/west-1_itma49.png",
+    gallery: [
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769846940/west_2_ly4kh9.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769846940/west_3_zqzmkp.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769846940/west-1_itma49.png",
+    ],
+    driveLink:
+      "https://drive.google.com/file/d/17pvQdC6V92slYHP2vsa-4AtJmKPkIu-0/view?usp=sharing",
+  },
+  {
+    id: "12",
+    slug: "lt-realty-evara-heights-thane",
+    title: "L&T Realty EVARA Heights",
+    developer: "L&T Realty",
+    tagline:
+      "Luxury elevated lifestyle next to Lake Shore Mall (Viviana) in Thane.",
+    location: "Thane West, Mumbai Metropolitan Region",
+    type: "Luxury",
+    featured: true,
+    description:
+      "EVARA Heights is a premium development on a 10-acre land parcel in Thane with iconic towers, 7-level car parking, and 4 levels of luxurious amenities. Featuring a 45,000 sq.ft Perch Clubhouse and excellent connectivity near Cadbury Metro station.",
+    highlights: [
+      "10-acre land parcel",
+      "Phase 1 launched – 3 iconic towers",
+      "7-level car parking",
+      "56 & 38-story habitable floors",
+      "4 levels of luxurious amenities",
+      "45,000 sq.ft Perch Clubhouse (first in Thane)",
+      "Cadbury Metro station opposite",
+      "Possession (RERA): Aug 2030",
+      "Jodi & Duplex options available",
+    ],
+    amenities: [
+      "45,000 sq.ft Perch Clubhouse",
+      "2 Swimming Pools",
+      "2 Gyms & Indoor Game Zone",
+      "2 Multipurpose Party Halls",
+      "Pickleball Court",
+      "Pet Corner",
+      "Lawn Tennis & Indoor Badminton Court",
+      "Fitness & Wellness Facilities",
+      "Outdoor Leisure Areas",
+      "Salon & Spa",
+      "60% Open Space & Recreational Amenities",
+    ],
+    configurations: [
+      {
+        wing: "Tower 1",
+        type: "2 BHK",
+        size: "850 sqft",
+        price: "₹1.90 Cr++ (All-in ₹2.21 Cr)",
+      },
+      {
+        wing: "Tower 2",
+        type: "3 BHK",
+        size: "1057 sqft",
+        price: "₹2.51 Cr++ (All-in ₹2.89 Cr)",
+      },
+      {
+        wing: "Tower 2",
+        type: "3 BHK",
+        size: "1214 sqft",
+        price: "₹2.91 Cr++ (All-in ₹3.34 Cr)",
+      },
+      {
+        wing: "Tower 4",
+        type: "4 BHK",
+        size: "1930 sqft",
+        price: "₹4.83 Cr++ (All-in ₹5.49 Cr)",
+      },
+      {
+        wing: "Tower 4",
+        type: "4 BHK",
+        size: "2235 sqft",
+        price: "₹5.59 Cr++ (All-in ₹6.34 Cr)",
+      },
+    ],
+    possession: {
+      constructionTarget: "Aug 2030",
+      reraCommitment: "Aug 2030",
+    },
+    image:
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769847199/lt-3_ozbgqn.png",
+    gallery: [
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769847199/lt-2_eiwsfw.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769847199/lt-1_ddxsoq.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769847199/lt-3_ozbgqn.png",
+    ],
+    driveLink:
+      "https://drive.google.com/file/d/1xe9A88AdQrnZ9lx8YVlwS_aDNs11v6Py/view?usp=sharing",
+  },
 ]
 
 export function formatPrice(price: number): string {
