@@ -42,7 +42,7 @@ export interface Property {
   possession?: Possession
   rera?: string
   contact?: Contact
-  driveLink?: string
+  driveLink?: string | string[]
   mapLink?: string
   image: string
   gallery: string[]
@@ -189,13 +189,18 @@ export const properties: Property[] = [
     rera: "P51800004029",
     image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447189/magnus-1_rchvby.png",
     gallery: [
-      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447189/magnus-1_rchvby.png",
       "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447186/magnus-5_jukx0g.png",
       "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447186/magnus-4_quh8ri.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447189/magnus-1_rchvby.png",
       "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447186/magnus-2_mico5r.png",
     ],
-    driveLink:
+    // Example: Single driveLink (as string)
+    driveLink:[
       "https://drive.google.com/file/d/1ZMDF-xGzVWhydzO1bROIrPmn46ujqvlT/view?usp=sharing",
+      "https://drive.google.com/file/d/16z7_5dcI5HTaynwKXl96K0B_l24SLV4m/view?usp=sharing",
+      "https://drive.google.com/file/d/1rqCS6jgKgiMWbQIrqlIHLdL2xGkn-5_C/view?usp=sharing",
+    ],
+
     mapLink:
       "https://www.google.com/maps/place/Kalpataru+Magnus/@19.0596141,72.8525241,17z",
   },
@@ -834,8 +839,320 @@ export const properties: Property[] = [
       "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769847199/lt-1_ddxsoq.png",
       "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769847199/lt-3_ozbgqn.png",
     ],
-    driveLink:
+    driveLink:[
       "https://drive.google.com/file/d/1xe9A88AdQrnZ9lx8YVlwS_aDNs11v6Py/view?usp=sharing",
+      "https://drive.google.com/file/d/1MsbR-Ol0DtRIMynM1OCBc7T74fhJXuz_/view?usp=sharing",
+      "https://drive.google.com/file/d/1RZw02nZrzAGyU-cJOwRxYN3Voa44-CFS/view?usp=sharing",
+      "https://drive.google.com/file/d/1qbp1w1E5D6H8C6KVMpgJbywuTXQ4Ng61/view?usp=sharing"
+    ]
+  },
+  {
+    id: "13",
+    slug: "godrej-properties-avenue-11",
+    title: "Godrej Properties Avenue 11",
+    developer: "Godrej Properties",
+    tagline: "67 & 54 floors of breathtaking architecture with exclusive 4BHK residences",
+    location: "Mahalaxmi, Maulana Azad Road, Mumbai",
+    type: "Luxury",
+    featured: true,
+    description:
+      "Godrej Properties Avenue 11 is a landmark development featuring two magnificent towers with 67 and 54 floors. Each floor offers just 4 exclusive apartments, ensuring low density and premium living. Set on 3.85 acres of free-hold land with 80% open spaces and amenities, this project defines modern luxury with 27+ lifestyle amenities.",
+    highlights: [
+      "67 & 54 floors of breathtaking architecture (2 Towers)",
+      "4 exclusive apartments per floor",
+      "Spacious 4 BHK residences (2,200-2,500 sq.ft.)",
+      "Low density project",
+      "3.85 acres of free-hold land",
+      "Private Access Road",
+      "80% open spaces and amenities",
+      "27+ lifestyle amenities",
+      "Private elevators and parking"
+    ],
+    amenities: [
+      "Private Elevators",
+      "Multi-level Parking",
+      "Landscaped Gardens",
+      "Swimming Pool",
+      "Fitness Center",
+      "Yoga Studio",
+      "Community Hall",
+      "Kids Play Area",
+      "24x7 Security",
+      "Concierge Service"
+    ],
+    configurations: [
+      {
+        wing: "Tower A",
+        type: "4 BHK",
+        size: "2301 sqft",
+        price: "₹90 L++",
+        facing: "42nd Floor"
+      },
+      {
+        wing: "Tower A",
+        type: "4 BHK",
+        size: "2223 sqft",
+        price: "₹1.10 Cr++",
+        facing: "60th Floor"
+      },
+      {
+        wing: "Tower B",
+        type: "4 BHK",
+        size: "2345 sqft",
+        price: "₹90 L++"
+      },
+      {
+        wing: "Tower B",
+        type: "4 BHK",
+        size: "2351 sqft",
+        price: "₹90 L++"
+      },
+      {
+        wing: "Tower B",
+        type: "4 BHK",
+        size: "2145 sqft",
+        price: "₹90 L++"
+      }
+    ],
+    possession: {
+      constructionTarget: "Dec 2027 (Tower A), Dec 2028 (Tower B)",
+      reraCommitment: "Dec 2028 (Tower A), Dec 2029 (Tower B)"
+    },
+    image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769933161/global-3_elze2g.png",
+    gallery: [
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769933161/global-1_zzoi24.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769933161/global-2_omlo53.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769933161/global-3_elze2g.png",
+    ],
+    driveLink: [
+      "https://drive.google.com/file/d/10vZE57wyTCtZ3JAgQTFnfuYVk3h789NE/view?usp=sharing",
+      "https://drive.google.com/file/d/1PpPLEyTVgobP0UARpBg3n4UDRcMw293b/view?usp=sharing"
+    ]
+  },
+  {
+    id: "14",
+    slug: "nexspace-godrej-city-panvel",
+    title: "NEXSPACE at Godrej City, Panvel",
+    developer: "Godrej Properties",
+    tagline: "Premium Grade A office spaces in a thriving 145-acre mixed-use township",
+    location: "Godrej City, Panvel, Mumbai",
+    type: "Office",
+    featured: true,
+    description:
+      "NEXSPACE offers premium Grade A commercial spaces within the thriving Godrej City, a 145-acre mixed-use township. Located just 20 minutes from the Navi Mumbai International Airport, this is Mumbai 3.0's new business address. Modern, customizable layouts with double-heighted lobbies and state-of-the-art facilities cater to growing enterprises.",
+    highlights: [
+      "Grade A Commercial Spaces",
+      "145-acre mixed-use township",
+      "20 mins from Navi Mumbai International Airport",
+      "Double-Heighted Lobby",
+      "12ft Floor to Floor Height",
+      "8x8ft Window Glazing",
+      "Modern & Customizable Layouts",
+      "Flexible Payment Plans",
+      "Proven Market Demand"
+    ],
+    amenities: [
+      "Double-Heighted Lobby",
+      "Centralized Air-Conditioning",
+      "8x8ft Window Glazing",
+      "12ft Floor to Floor Height",
+      "Modern & Customizable Layouts",
+      "Cafeteria",
+      "Conference Room",
+      "Utility Areas",
+      "Service Elevator",
+      "24x7 Security"
+    ],
+    configurations: [
+      {
+        type: "Grade A Office Space",
+        size: "Customizable Layouts",
+        price: "₹79 L+"
+      }
+    ],
+    rera: "PC1270002501723",
+    image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769933482/nexus-1_zclibu.png",
+    gallery: [
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769933482/nexus-1_zclibu.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769933482/nexus-2_bluq2h.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769933482/nexus-3_ppeoif.png"
+    ],
+    driveLink: "https://drive.google.com/file/d/1zAEnksrCGGUXjnzooPOGlpmXK_1zIhsG/view?usp=sharing"
+  },
+  {
+    id: "15",
+    slug: "chandak-sarvam-andheri-east",
+    title: "Chandak Sarvam",
+    developer: "Chandak Group",
+    tagline: "Thoughtfully curated luxury homes with spacious 2, 3, & 4 BHKs in Andheri East",
+    location: "Off JB Nagar, Andheri East, Mumbai",
+    type: "Apartment",
+    featured: true,
+    description:
+      "Chandak Sarvam is a luxury residential development offering spacious homes spread across 3.5 acres. With modern amenities, dedicated private balconies, and excellent connectivity, this project defines thoughtfully curated living with 25+ lifestyle amenities for your ultimate comfort.",
+    highlights: [
+      "Spread across 3.5 Acres",
+      "6 Towers with G+13 Floors & 5 Basements",
+      "Dedicated private balconies",
+      "Spacious homes for ultimate comfort",
+      "25+ lifestyle amenities",
+      "Excellent overall connectivity",
+      "Modern architecture & design",
+      "Superior connectivity to JB Nagar"
+    ],
+    amenities: [
+      "Private Balconies",
+      "Landscaped Gardens",
+      "Swimming Pool",
+      "Fitness Center",
+      "Yoga Studio",
+      "Kids Play Area",
+      "Community Hall",
+      "24x7 Security",
+      "Ample Parking",
+      "Clubhouse",
+      "Jogging Track"
+    ],
+    configurations: [
+      {
+        type: "2 BHK",
+        size: "780 - 825 sqft",
+        price: "₹3.05 Cr++"
+      },
+      {
+        type: "3 BHK",
+        size: "1227 - 1280 sqft",
+        price: "₹4.66 Cr++"
+      },
+      {
+        type: "4 BHK",
+        size: "1646 - 2440 sqft",
+        price: "₹6.09 Cr++"
+      }
+    ],
+    possession: {
+      constructionTarget: "Dec 2028",
+      reraCommitment: "Dec 2030"
+    },
+    rera: "P51800078249",
+    mapLink: "https://maps.app.goo.gl/AAkykaF6zRrU8crX6",
+    image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769934513/sarvam-1_shrp5o.png",
+    gallery: [
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769934513/sarvam-1_shrp5o.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769934513/sarvam-2_u0fwf2.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769934513/sarvam-3_siunof.png"
+    ],
+    driveLink: [
+      "https://drive.google.com/file/d/1zzenu6w6owo-bsf2uGzZwQTenLHcYhlw/view?usp=sharing",
+      "https://drive.google.com/file/d/1gv9RLTwlBylT5pAKt6gNUt8YFfoBF_rU/view?usp=sharing",
+      "https://drive.google.com/file/d/1pCJXTpfcFXCsBYl6JDMXlsqjw5d8WF-m/view?usp=sharing",
+      "https://drive.google.com/file/d/1Rw5KwMzJ7RjF-vh3V8667macv57wMgS8/view?usp=sharing",
+      "https://drive.google.com/file/d/1-SQnLykPi5tOu_GkzXBsUlQ2vasmLAQS/view?usp=sharing"
+    ]
+  },
+  {
+    id: "16",
+    slug: "runwal-malabar-hill",
+    title: "Runwal Malabar Hill",
+    developer: "Runwal",
+    tagline: "Iconic 40-storey luxury high-rise tower designed by Broadway Malyan",
+    location: "Malabar Hill, Mumbai",
+    type: "Luxury",
+    featured: true,
+    description:
+      "Runwal Malabar Hill is an exclusive 40-storey luxury tower redefining skyline living. Designed by renowned architect Broadway Malyan, this iconic development features a grand double-height entrance lobby, 11 levels of podium car parking, and spectacular rooftop amenities with panoramic views.",
+    highlights: [
+      "40-storey luxury tower",
+      "Designed by Broadway Malyan",
+      "2 Basement Levels with visitor parking",
+      "Grand Double-Height Entrance Lobby",
+      "11 Levels of Podium Car Parking",
+      "22 Habitable Residential Floors",
+      "Double-Height Clubhouse",
+      "Spectacular Double-Height Rooftop Clubhouse",
+      "Privacy, light & luxury design"
+    ],
+    amenities: [
+      "Grand Double-Height Entrance Lobby",
+      "Double-Height Clubhouse",
+      "Rooftop Clubhouse with Panoramic Views",
+      "Swimming Pool",
+      "Fitness Center",
+      "Spa & Wellness",
+      "Concierge Service",
+      "Private Elevators",
+      "24x7 Security",
+      "Premium Parking"
+    ],
+    configurations: [
+      {
+        type: "3 BHK",
+        size: "Details on request",
+        price: "Premium pricing"
+      },
+      {
+        type: "4 BHK",
+        size: "Details on request",
+        price: "Premium pricing"
+      }
+    ],
+    image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447189/magnus-1_rchvby.png",
+    gallery: [
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447189/magnus-1_rchvby.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447186/magnus-2_mico5r.png",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769447186/magnus-4_quh8ri.png"
+    ]
+  },
+  {
+    id: "17",
+    slug: "aditya-birla-airoli-thane",
+    title: "Aditya Birla Real Estate - Airoli",
+    developer: "Aditya Birla Real Estate",
+    tagline: "Premium mixed-use development on 28 acres of freehold land near Airoli",
+    location: "Thane-Belapur Road, Airoli, Navi Mumbai",
+    type: "Apartment",
+    featured: true,
+    description:
+      "Aditya Birla Real Estate is launching an iconic landmark project on 28 acres of freehold land at the Hindalco Foil Plant site. Phase 1 features well-planned modern residences with excellent connectivity to Airoli Mindspace, Jio HQ, and Navi Mumbai Airport. Perfect for professionals and families seeking premium living.",
+    highlights: [
+      "28 acres freehold land",
+      "Phase 1: 14 acres launched",
+      "Near Hindalco Foil Plant, Thane-Belapur Road",
+      "5 min to Airoli Mindspace (West) & Capgemini",
+      "10 min to Airoli Mindspace (East) & Reliance Jio HQ",
+      "45 min to Navi Mumbai Airport",
+      "2 min to Dighe Station",
+      "10 min to Thane (East) Station",
+      "Well-planned modern architecture"
+    ],
+    amenities: [
+      "Modern Design",
+      "Balconies",
+      "Landscaped Surroundings",
+      "Community Spaces",
+      "24x7 Security",
+      "Ample Parking",
+      "Green Spaces",
+      "Recreation Areas"
+    ],
+    configurations: [
+      {
+        type: "2 BHK with Balcony",
+        size: "740 - 900 sqft",
+        price: "₹1.56 Cr++"
+      },
+      {
+        type: "3 BHK with Balcony",
+        size: "1050 - 1200 sqft",
+        price: "₹2.14 Cr++"
+      }
+    ],
+    image: "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769452232/jb99_zg2rto.jpg",
+    gallery: [
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769452232/jb99_zg2rto.jpg",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769452232/jb99_zg2rto.jpg",
+      "https://res.cloudinary.com/dn1ccd6zb/image/upload/v1769452232/jb99_zg2rto.jpg"
+    ]
   },
 ]
 

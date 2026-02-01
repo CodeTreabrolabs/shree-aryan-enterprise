@@ -10,7 +10,7 @@ import { Footer } from "@/components/footer"
 import { PropertyCard } from "@/components/property-card"
 import { properties, type Property } from "@/lib/properties"
 
-const propertyTypes = ["All", "Apartment", "Villa", "Commercial", "Office", "Retail"]
+const propertyTypes = ["All", "Apartment", "Villa", "Commercial", "Office", "Retail", "Luxury"]
 
 export default function PropertiesPage() {
   const [searchTerm, setSearchTerm] = useState("")
