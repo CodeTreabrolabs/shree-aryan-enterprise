@@ -63,6 +63,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-05F4D0MMD6"></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];`}
+          {`function gtag(){window.dataLayer.push(arguments);}`}
+          {`gtag('js', new Date());`}
+          {`gtag('config', 'G-05F4D0MMD6');`}
+        </script>
+      </head>
       <body className="font-sans antialiased">
         {children}
         <LiveChatWidget />
