@@ -20,7 +20,6 @@ export function PropertyEnquiryForm({ property }: PropertyEnquiryFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     message: `I am interested in "${property.title}" at ${property.location}.`,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,14 +42,6 @@ export function PropertyEnquiryForm({ property }: PropertyEnquiryFormProps) {
         required: true,
         placeholder: "Enter Your Full Name",
         value: formData.name,
-      },
-      {
-        key: "email",
-        type: "email",
-        label: "Email Address",
-        required: true,
-        placeholder: "Enter Your Email Address",
-        value: formData.email,
       },
       {
         key: "field_1766940515513",
@@ -87,7 +78,7 @@ export function PropertyEnquiryForm({ property }: PropertyEnquiryFormProps) {
       setIsSubmitted(true);
       
       // Prepare WhatsApp message with form data
-      const whatsappMessage = `*Property Enquiry*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Email:* ${formData.email}\n*Message:* ${formData.message}`;
+      const whatsappMessage = `*Property Enquiry*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Message:* ${formData.message}`;
       const encodedMessage = encodeURIComponent(whatsappMessage);
       const whatsappUrl = `https://wa.me/919322635844?text=${encodedMessage}`;
       
@@ -97,7 +88,6 @@ export function PropertyEnquiryForm({ property }: PropertyEnquiryFormProps) {
       setFormData({
         name: "",
         phone: "",
-        email: "",
         message: `I am interested in "${property.title}" at ${property.location}.`,
       });
     } catch (error) {
@@ -152,16 +142,6 @@ export function PropertyEnquiryForm({ property }: PropertyEnquiryFormProps) {
               value={formData.phone}
               onChange={(e) =>
                 setFormData({ ...formData, phone: e.target.value })
-              }
-              required
-            />
-            <Input
-              type="email"
-              placeholder="Email Address"
-              className="text-sm md:text-base"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
               }
               required
             />
