@@ -24,7 +24,7 @@ export function LiveChatWidget() {
     <>
       <div id="livechat-root"></div>
       <Script
-        src="https://unpkg.com/@getwidgets/live-chat-widget@latest/dist/live-chat-widget.umd.js"
+        src="https://cdn.widgetkraft.com/livechat.js"
         strategy="afterInteractive"
         onLoad={handleLoad}
       />
